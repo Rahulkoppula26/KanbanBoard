@@ -8,13 +8,12 @@ const appRouter = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-
   }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+  
     <RouterProvider router={appRouter} />
   </StrictMode>,
 )

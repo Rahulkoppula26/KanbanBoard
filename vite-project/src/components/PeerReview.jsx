@@ -1,26 +1,28 @@
-import Drag from "./Drag";
 import "./Style.css";
 import Card from "./Card";
-function PeerReview(props) {
+function PeerReview({ onDragStart, onDrop, tasks=[],handleDelete}) {
 
   return (
     <>
       <div
         className="peerreview"
         onDragOver={(e)=>e.preventDefault()}
-        onDrop={(e) => props.onDrop(e,"peerReview")}
+        onDrop={(e) => onDrop(e,"peerReview")}
       >
-        <h2>review</h2>
-        {props.tasks.map((item, index) => (
+        <h3>Peer Review</h3>
+        {/* fetching tasks */}
+        {tasks.map((item, index) => (
           
               <div
                 key={item.id}
                 draggable="true"
-                onDragStart={() => props.onDragStart(item, "peerReview")}
+                onDragStart={() => onDragStart(item)}  
               >
-               <Card title={item.title} description={item.description} />
-               {console.log(item)}
-                <Drag  />
+                {/* making card dragable and defining drag start on card  */}
+               <Card  draggable="true"
+                onDragStart={(e) => onDragStart(item, "peerReview")} 
+                 key={item.id} item={item} 
+                 handleDelete={() =>handleDelete(index)}/>
               </div>
           
           
