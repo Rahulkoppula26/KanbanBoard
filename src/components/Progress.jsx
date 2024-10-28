@@ -1,27 +1,26 @@
-import Drag from "./Drag";
 import "./Style.css";
 import Card from "./Card";
-function Progress(props) {
-  console.log("progress", props.tasks);
+function Progress({ onDragStart, onDrop, tasks=[],handleDelete}) {  
   return (
     <>
       <div
         className="progress"
         onDragOver={(e) => e.preventDefault()}
-        onDrop={(e) => props.onDrop(e, "progress")}
+        onDrop={(e) => onDrop(e, "progress")}
       >
-        <h2>progress</h2>
-        {props.tasks.map((item, index) => {
+        <h3 >Progress</h3>
+        {tasks.map((item, index) => {
           return (
               <div
                 key={item.id}
                 draggable="true"
-                onDragStart={(e) => {
-                  props.onDragStart(item, "progress");
-                }}
+                onDragStart={() => onDragStart(item)}
               >
-                <Card key={item.id} item={item} />
-                {/* <Drag onDrop={() => props.onDrop("progress")} /> */}
+                 {/* making card dragable and defining drag start on card  */}
+                <Card  draggable="true"
+                onDragStart={(e) => {
+                  onDragStart(item, "progress");
+                }} key={item.id} item={item}  handleDelete={()=>handleDelete(index)} />
               </div>
           );
         })}

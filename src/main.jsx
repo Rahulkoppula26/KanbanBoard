@@ -8,7 +8,6 @@ const appRouter = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-
   }
 ])
 
