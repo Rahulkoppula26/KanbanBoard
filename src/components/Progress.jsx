@@ -9,6 +9,7 @@ function Progress({ onDragStart, onDrop, tasks=[],handleDelete}) {
         onDrop={(e) => onDrop(e, "progress")}
       >
         <h3 >Progress</h3>
+        <div className="progress-tasks" >
         {tasks.map((item, index) => {
           return (
               <div
@@ -24,6 +25,7 @@ function Progress({ onDragStart, onDrop, tasks=[],handleDelete}) {
               </div>
           );
         })}
+        </div>
       </div>
     </>
   );

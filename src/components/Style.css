@@ -59,7 +59,15 @@ span {
 }
 .title{
     font-size: large;
+    height: 2rem;
+    width: 100%;
+    overflow-y: scroll;
     font-weight: 600;
+}
+.description{
+    height: 4rem;
+    width: 100%;
+    overflow-y: scroll;
 }
 .card:active {
     cursor: grabbing;
@@ -161,9 +169,17 @@ span {
     border: 2px solid rgb(255, 255, 255);
     border-radius: 10px;
     margin: 10px;
+    
+    
+}
+.progress-tasks{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 }
-
 .progress h3 {
     color: white;
     background-color: rgb(70, 62, 157);
@@ -181,8 +197,13 @@ span {
     border: 2px solid rgb(255, 255, 255);
     border-radius: 10px;
     margin: 10px;
-
-
+}
+.peerreview-tasks{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .peerreview h3 {
@@ -203,6 +224,13 @@ span {
     margin: 10px;
 
 
+}
+.done-tasks{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .done h3 {

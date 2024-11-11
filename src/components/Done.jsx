@@ -8,6 +8,7 @@ function Done({ onDragStart, onDrop, tasks=[],handleDelete}) {
        onDrop={(e) => onDrop(e,"done")}>
         <h3>Done</h3>
         {/* fetching tasks from the done componnent and defining dragable and drag start on card*/}
+        <div className="done-tasks" >
         {tasks.map((item, index) => (
               <div
                 key={index}
@@ -20,6 +21,7 @@ function Done({ onDragStart, onDrop, tasks=[],handleDelete}) {
 
           )
         )}
+        </div>
       </div>
     </>
   );

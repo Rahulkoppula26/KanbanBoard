@@ -13,7 +13,7 @@ function App() {
   const [description, setDescription] = useState("");
   const [taskId, setTaskId] = useState(1);
   const [searchText, setSearchText] = useState("");
-  // Initializing the components states to empty at begining
+  // Initalizing the compnents states to empty at begining
   const [tasks, setTasks] = useState({
     toDo: [],
     progress: [],
@@ -21,11 +21,11 @@ function App() {
     done: []
   });
   const [draggedItem, setDraggedItem] = useState(null);
-  // implementing  drag start function to drag & move to other components
+  // implimenting  drag start func to drag,move to othre components
   function onDragStart(item, listType) {
     setDraggedItem({ item, listType });
   };
-  // implementing  ondrop function to drop task in other components
+  // implimented now the ondrop func to drop task in other components
   function onDrop(targetListType) {
     if (draggedItem) {
       const { item, listType:sourceList } = draggedItem;
@@ -38,7 +38,7 @@ function App() {
     setDraggedItem(null);
     }
   };
-  // implementing add task feature 
+  // implementing add task funtionalty 
   function handleAdd() {
     if (title && description) {
       const newTask = { id: taskId, title, description };
@@ -51,14 +51,14 @@ function App() {
       setTaskId(taskId + 1);
     }
   }
-  // deleting the task function
+  // deleting task function
   const handleDelete = (listType,indexVal) => {
     setTasks((prev) => ({
       ...prev,
       [listType]: prev[listType].filter((_, index) => index !== indexVal)
     }));
   };
-  // filtering the tasks depending upon search input
+  // filter the tasks on saerch input
   function filterTasks(list) {
     return list ? list.filter(
       (task) =>
