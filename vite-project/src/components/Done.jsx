@@ -1,4 +1,4 @@
-import "./Style.css"
+import "./style.css"
 import Card from "./Card";
 function Done({ onDragStart, onDrop, tasks=[],handleDelete}) {
   return (
