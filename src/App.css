@@ -1,0 +1,15 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color:black;
+}
+.all-sections{
+  display: flex;
+}
+.adding-task{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
