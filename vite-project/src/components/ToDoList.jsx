@@ -1,5 +1,5 @@
 import Card from "./Card";
-import "./Style.css";
+import "./style.css";
 
 function ToDoList({ onDragStart, onDrop, tasks=[],handleDelete }) {
  
